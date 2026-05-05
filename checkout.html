@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お申し込み | Lark Base構築サービス</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="checkout-page">
+    <section class="checkout-card">
+      <h1>お申し込み・決済</h1>
+      <p class="muted">以下の情報を入力してお申し込みください。（デモページ）</p>
+
+      <div class="order-summary">
+        <h2>注文内容</h2>
+        <dl>
+          <div><dt>プラン</dt><dd>スタンダード</dd></div>
+          <div><dt>金額</dt><dd>¥198,000（税込）</dd></div>
+          <div><dt>サポート</dt><dd>30日間</dd></div>
+        </dl>
+      </div>
+
+      <form class="payment-form" onsubmit="event.preventDefault(); alert('お申し込みありがとうございます。担当者よりご連絡いたします。');">
+        <label>会社名
+          <input type="text" name="company" required>
+        </label>
+        <label>ご担当者名
+          <input type="text" name="name" required>
+        </label>
+        <label>メールアドレス
+          <input type="email" name="email" required>
+        </label>
+        <label>カード番号
+          <input type="text" name="card" inputmode="numeric" placeholder="4242 4242 4242 4242" required>
+        </label>
+        <div class="grid two-col">
+          <label>有効期限
+            <input type="text" name="exp" placeholder="MM/YY" required>
+          </label>
+          <label>セキュリティコード
+            <input type="text" name="cvc" inputmode="numeric" placeholder="123" required>
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">¥198,000 を支払う</button>
+      </form>
+
+      <p class="note">※ 実際のオンライン決済には Stripe / GMO / Pay.jp などの決済API連携が必要です。</p>
+      <p><a href="index.html">← LPに戻る</a></p>
+    </section>
+  </main>
+</body>
+</html>
